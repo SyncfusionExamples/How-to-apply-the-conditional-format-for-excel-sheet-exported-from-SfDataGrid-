@@ -29,21 +29,5 @@ namespace SfDataGrid_Sample
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var options = new ExcelExportingOptions();
-            options.ExcelVersion = ExcelVersion.Excel2013;
-            var excelEngine = sfDataGrid.ExportToExcel(sfDataGrid.View, options);
-            var workBook = excelEngine.Excel.Workbooks[0];
-            //Apply conditional format to worksheet
-            IWorksheet worksheet = workBook.Worksheets[0];
-            IConditionalFormats formats = worksheet["F2:F11"].ConditionalFormats;
-            IConditionalFormat format = formats.AddCondition();
-            format.FormatType = ExcelCFType.DataBar;
-            IDataBar dataBar = format.DataBar;
-            dataBar.BarColor = Color.Blue;
-            workBook.SaveAs("Sample.xlsx");
-        }
     }
 }

@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Syncfusion.UI.Xaml.Grid;
+using Syncfusion.UI.Xaml.Grid.Converter;
+using Syncfusion.XlsIO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SfDataGrid_Sample
 {
@@ -16,10 +21,25 @@ namespace SfDataGrid_Sample
             set { _orders = value; }
         }
 
+        private ICommand exportCommand;
+
+        public ICommand ExportCommand
+        {
+            get
+            {
+                return exportCommand;
+            }
+            set
+            {
+                exportCommand = value;
+            }
+        }
+
         public ViewModel()
         {
             _orders = new ObservableCollection<OrderInfo>();
             this.GenerateOrders();
+            ExportCommand = new RelayCommand(OnExportClicked);
         }
 
         private void GenerateOrders()
@@ -34,6 +54,23 @@ namespace SfDataGrid_Sample
             _orders.Add(new OrderInfo(1008, "Martin Sommer", "Spain", "BOLID", "Madrid", 56));
             _orders.Add(new OrderInfo(1009, "Laurence Lebihan", "France", "BONAP", "Marseille", 90));
             _orders.Add(new OrderInfo(1010, "Elizabeth Lincoln", "Canada", "BOTTM", "Tsawassen", 78));
+        }
+
+        private void OnExportClicked(object obj)
+        {
+            var grid = obj as SfDataGrid;
+            var options = new ExcelExportingOptions();
+            options.ExcelVersion = ExcelVersion.Excel2013;
+            var excelEngine = grid.ExportToExcel(grid.View, options);
+            var workBook = excelEngine.Excel.Workbooks[0];
+            //Apply conditional format to worksheet
+            IWorksheet worksheet = workBook.Worksheets[0];
+            IConditionalFormats formats = worksheet["F2:F11"].ConditionalFormats;
+            IConditionalFormat format = formats.AddCondition();
+            format.FormatType = ExcelCFType.DataBar;
+            IDataBar dataBar = format.DataBar;
+            dataBar.BarColor = Color.Blue;
+            workBook.SaveAs("Sample.xlsx");
         }
     }
 }

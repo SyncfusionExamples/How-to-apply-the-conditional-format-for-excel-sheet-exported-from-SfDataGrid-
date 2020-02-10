@@ -41,9 +41,9 @@
     </Reference>
     <Reference Include="Syncfusion.SfGrid.WPF">
     </Reference>
-    <Reference Include="Syncfusion.SfGridConverter.WPF, Version=17.4460.0.30, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfGridConverter.WPF, Version=17.1460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Assemblies\WPF\17.4.0.30\17.4.0.30\4.6\Syncfusion.SfGridConverter.WPF.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\WPF\17.1.0.38\Assemblies\4.6\Syncfusion.SfGridConverter.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.WPF">
     </Reference>
@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -6,12 +6,12 @@
         xmlns:datapager="clr-namespace:Syncfusion.UI.Xaml.Controls.DataPager;assembly=Syncfusion.SfGrid.WPF"
         Title="MainWindow" Height="500" Width="1050">
 
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
+    <Window.Resources>
+        <local:ViewModel x:Key="viewModel"/>
+    </Window.Resources>
 
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" DataContext="{StaticResource viewModel}">
         <syncfusion:SfDataGrid ItemsSource="{Binding Orders}" x:Name="sfDataGrid" />
-        <Button Click="Button_Click" Content="Export To Excel" Width="100" Height="50" Margin="20" VerticalAlignment="Top"/>
+        <Button Content="Export To Excel" Width="100" Height="50" Margin="20" VerticalAlignment="Top" Command="{Binding ExportCommand, Source={StaticResource viewModel}}" CommandParameter="{Binding ElementName=sfDataGrid}"/>
     </StackPanel>
 </Window>
