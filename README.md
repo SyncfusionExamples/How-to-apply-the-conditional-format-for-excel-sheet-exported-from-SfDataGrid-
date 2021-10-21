@@ -20,5 +20,8 @@ This example illustrates how to apply the conditional formatting to the exported
  workBook.SaveAs("Sample.xlsx");
 
 ```
+
+KB article - [How-to-apply-the-conditional-format-for-excel-sheet-exported-from-SfDataGrid-](https://www.syncfusion.com/kb/10994/how-to-apply-the-conditional-format-for-excel-sheet-exported-from-wpf-datagrid-sfdatagrid)
+
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
