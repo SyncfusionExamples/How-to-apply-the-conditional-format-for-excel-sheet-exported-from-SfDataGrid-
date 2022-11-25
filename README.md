@@ -1,4 +1,4 @@
-# How-to-apply-the-conditional-format-for-excel-sheet-exported-from-SfDataGrid-
+# How to apply the conditional format for excel sheet exported from WPF DataGrid (SfDataGrid)
 ## About the sample
 
 This example illustrates how to apply the conditional formatting to the exported excel in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
