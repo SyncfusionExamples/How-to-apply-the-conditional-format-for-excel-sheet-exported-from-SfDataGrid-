@@ -1,9 +1,8 @@
-# How-to-apply-the-conditional-format-for-excel-sheet-exported-from-SfDataGrid-
-## About the sample
+# How to Apply the Conditional Format for Excel Sheet Exported from WPF DataGrid?
 
 This example illustrates how to apply the conditional formatting to the exported excel in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
 
-[WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) does not provide direct support to the conditional formatting while exporting from the grid to excel sheet. But you can achieve this by applying the conditional formatting to the exported worksheet. 
+`DataGrid` does not provide direct support to the conditional formatting while exporting from the grid to excel sheet. But you can achieve this by applying the conditional formatting to the exported worksheet. 
 
 ```c#
  var options = new ExcelExportingOptions();
@@ -21,7 +20,6 @@ This example illustrates how to apply the conditional formatting to the exported
 
 ```
 
-KB article - [How-to-apply-the-conditional-format-for-excel-sheet-exported-from-SfDataGrid-](https://www.syncfusion.com/kb/10994/how-to-apply-the-conditional-format-for-excel-sheet-exported-from-wpf-datagrid-sfdatagrid)
+![Excel file with conditional formating during exporting excel](ExcelFileWithConditionalFormatApplied.png)
 
-## Requirements to run the demo
-Visual Studio 2015 and above versions
+Take a moment to peruse the [Excel To Export Customization](https://help.syncfusion.com/wpf/datagrid/export-to-excel#customize-exported-workbook-and-worksheet) documentation for more information.
